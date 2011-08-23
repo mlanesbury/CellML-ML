@@ -44,12 +44,15 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="menu:org.eclipse.ui.main.menu">
-         <menu
-               label="File">
+         <menu label="File">
             <command
                   commandId="org.eclipse.ui.file.exit"
                   label="Exit">
             </command>
+         </menu>
+         <menu label="Help">
+         	<command commandId="CellML-ML.about" label="About">
+         	</command>
          </menu>
       </menuContribution>
    </extension>
@@ -63,7 +66,40 @@
                name="windowImages"
                value="icons/alt_window_16.gif,icons/alt_window_32.gif">
          </property>
+         <property
+               name="appName"
+               value="CellML-ML Editor by Mitchell Lanesbury">
+         </property>
+         <property
+               name="aboutText"
+               value="CellML-ML&#x0A;&#x0A;A CellML IDE based on the CellML 1.1 specification&#x0A;&#x0A;Written by Mitchell Lanesbury 2011 (mitchell.lanesbury@gmail.com)">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
       </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.eclipse.ui.internal.about.AboutHandler"
+            description="About CellML-ML"
+            id="CellML-ML.about"
+            name="About">
+      </command>
    </extension>
 
 </plugin>
